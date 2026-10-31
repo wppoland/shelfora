@@ -100,6 +100,10 @@ final class CatalogMode implements HasHooks
 
         $notice = $this->priceNotice($product);
 
+        if ('' !== $notice) {
+            wp_enqueue_style('catalog');
+        }
+
         return '' !== $notice
             ? '<span class="catalog-price-notice">' . esc_html($notice) . '</span>'
             : '';
@@ -470,11 +474,21 @@ final class CatalogMode implements HasHooks
 
     public function enqueueAssets(): void
     {
-        wp_enqueue_style(
+        wp_register_style(
             'catalog',
             CATALOG_URL . 'assets/css/catalog.css',
             [],
             \Catalog\VERSION,
         );
+
+        // The stylesheet only dresses the price notice. Head load on shop
+        // screens when a notice is set; a notice rendered anywhere else (a
+        // product block, or a per-product notice from the catalog/price_notice
+        // filter) enqueues it from filterPriceHtml().
+        if ('' !== $this->settings->string('price_notice')
+            && function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout())
+            && $this->applies()) {
+            wp_enqueue_style('catalog');
+        }
     }
 }
