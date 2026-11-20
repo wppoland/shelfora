@@ -115,7 +115,8 @@ msgstr "Verwandle deinen Shop in einen Katalog"
 #: src/Admin/Settings.php:128
 msgid ""
 "Hide prices and/or the add-to-cart button across your store, or only for "
-"certain visitors (for example, show prices to logged-in wholesale customers)."
+"certain visitors (for example, show prices to logged-in wholesale "
+"customers)."
 msgstr ""
 "Blende Preise und/oder die Schaltfläche „In den Warenkorb“ in deinem "
 "gesamten Shop oder nur für bestimmte Besucher aus (zeige beispielsweise "
@@ -135,8 +136,8 @@ msgstr "Wende den Katalogmodus auf der Storefront an."
 
 #: src/Admin/Settings.php:148
 msgid ""
-"The master switch. When off, nothing is hidden and the catalog stylesheet is "
-"not loaded, your store sells as normal."
+"The master switch. When off, nothing is hidden and the catalog stylesheet is"
+" not loaded, your store sells as normal."
 msgstr ""
 "Der Hauptschalter. Wenn diese Option deaktiviert ist, wird nichts "
 "ausgeblendet und das Katalog-Stylesheet wird nicht geladen. dein Shop "
@@ -156,7 +157,8 @@ msgid ""
 "notice such as \"Contact us for pricing\" below."
 msgstr ""
 "Entfernt den Preis überall dort, wo WooCommerce ihn drucken würde. Zeige "
-"optional unten einen Hinweis wie „Kontaktiere uns für Preisinformationen“ an."
+"optional unten einen Hinweis wie „Kontaktiere uns für Preisinformationen“ "
+"an."
 
 #: src/Admin/Settings.php:153
 msgid "Hide add-to-cart"
@@ -177,19 +179,22 @@ msgstr ""
 
 #: src/Admin/Settings.php:154
 msgid "Admin preview bypass"
-msgstr ""
+msgstr "Admin-Vorschau ohne Katalogmodus"
 
 #: src/Admin/Settings.php:154
 msgid ""
-"Allow store administrators and managers to always see prices and add-to-cart "
-"buttons."
+"Allow store administrators and managers to always see prices and add-to-cart"
+" buttons."
 msgstr ""
+"Shop-Administratoren und -Manager sehen immer Preise und Warenkorb-Buttons."
 
 #: src/Admin/Settings.php:154
 msgid ""
-"When enabled, users with manage_woocommerce capability can test and view the "
-"normal purchasing workflow without signing out."
+"When enabled, users with manage_woocommerce capability can test and view the"
+" normal purchasing workflow without signing out."
 msgstr ""
+"Wenn aktiviert, können Benutzer mit der Berechtigung manage_woocommerce den "
+"normalen Kaufablauf testen und ansehen, ohne sich abzumelden."
 
 #: src/Admin/Settings.php:158
 msgid "Price notice"
@@ -235,8 +240,8 @@ msgstr "Alle außer ausgewählten Rollen"
 
 #: src/Admin/Settings.php:196
 msgid ""
-"Choose who catalog mode hides prices and buying from. Everyone applies it to "
-"all visitors. Only logged-out visitors lets members see prices once they "
+"Choose who catalog mode hides prices and buying from. Everyone applies it to"
+" all visitors. Only logged-out visitors lets members see prices once they "
 "sign in. The two \"selected roles\" rules use the role list below."
 msgstr ""
 "Wähle aus, bei wem im Katalogmodus Preise und Einkäufe ausgeblendet werden. "
@@ -273,8 +278,8 @@ msgstr ""
 
 #: src/Admin/Settings.php:217
 msgid ""
-"Not used by the current visitor rule, choose a \"selected roles\" rule above "
-"to enable it."
+"Not used by the current visitor rule, choose a \"selected roles\" rule above"
+" to enable it."
 msgstr ""
 "Wird von der aktuellen Besucherregel nicht verwendet. Wähle oben eine "
 "„Ausgewählte Rollen“-Regel aus, um sie zu aktivieren."
