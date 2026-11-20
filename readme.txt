@@ -134,7 +134,10 @@ Shelfora is fully translatable and ships the `shelfora.pot` template. Translatio
 
 == Changelog ==
 
-= 1.1.9 = * Readme: link to Shelfora Pro in the documentation list. New screenshots.  = 1.1.8 =
+= 1.1.9 =
+* Readme: link to Shelfora Pro in the documentation list. New screenshots.
+
+= 1.1.8 =
 * Performance: the stylesheet now loads only where a price notice shows. Plain pages and posts load nothing from the plugin.
 
 = 1.1.7 =
