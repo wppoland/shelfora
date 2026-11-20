@@ -56,6 +56,7 @@ final class CatalogMode implements HasHooks
 
         // Belt-and-braces: block server-side add-to-cart for catalog products.
         add_filter('woocommerce_is_purchasable', [$this, 'filterPurchasable'], 100, 2);
+        add_filter('woocommerce_variation_is_purchasable', [$this, 'filterPurchasable'], 100, 2);
 
         add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);
     }
@@ -99,6 +100,10 @@ final class CatalogMode implements HasHooks
 
         $notice = $this->priceNotice($product);
 
+        if ('' !== $notice) {
+            wp_enqueue_style('catalog');
+        }
+
         return '' !== $notice
             ? '<span class="catalog-price-notice">' . esc_html($notice) . '</span>'
             : '';
@@ -116,6 +121,13 @@ final class CatalogMode implements HasHooks
         }
 
         if (! $this->shouldHideAddToCart($product)) {
+            return;
+        }
+
+        // A block template has already unhooked the classic form and renders it
+        // as a block, which filterAddToCartBlock() replaces. Rendering here too
+        // would show the replacement twice.
+        if (! has_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart')) {
             return;
         }
 
@@ -273,9 +285,10 @@ final class CatalogMode implements HasHooks
         $allowed['form']     = ['id' => true, 'class' => true, 'action' => true, 'method' => true, 'novalidate' => true, 'data-*' => true];
         $allowed['input']    = $common + ['type' => true, 'min' => true, 'max' => true, 'step' => true, 'placeholder' => true, 'checked' => true, 'autocomplete' => true, 'data-*' => true];
         $allowed['textarea'] = $common + ['rows' => true, 'cols' => true, 'placeholder' => true];
-        $allowed['select']   = $common + ['multiple' => true];
+        $allowed['select']   = $common + ['multiple' => true, 'data-*' => true];
         $allowed['option']   = ['value' => true, 'selected' => true];
-        $allowed['button']   = $common + ['type' => true, 'data-*' => true];
+        // Swatch buttons in a variation form: colour, radio role and state.
+        $allowed['button']   = $common + ['type' => true, 'data-*' => true, 'role' => true, 'aria-checked' => true, 'aria-pressed' => true, 'title' => true, 'style' => true, 'tabindex' => true];
         $allowed['label']    = ['for' => true, 'class' => true, 'id' => true];
         $allowed['p']        = ($allowed['p'] ?? []) + ['role' => true, 'aria-live' => true, 'hidden' => true];
 
@@ -313,28 +326,46 @@ final class CatalogMode implements HasHooks
         return $this->shouldHideAddToCart($product) ? false : $purchasable;
     }
 
+    /**
+     * A variation is judged as its parent product: it has no categories or
+     * product settings of its own, so a rule that looks at the product would
+     * otherwise miss it and leave that variation buyable or priced.
+     */
+    private static function ruleProduct(\WC_Product $product): \WC_Product
+    {
+        if (! $product->is_type('variation')) {
+            return $product;
+        }
+
+        $parent = wc_get_product($product->get_parent_id());
+
+        return $parent instanceof \WC_Product ? $parent : $product;
+    }
+
     private function shouldHidePrice(\WC_Product $product): bool
     {
-        $hide = $this->settings->bool('hide_price');
+        $product = self::ruleProduct($product);
+        $hide    = $this->settings->bool('hide_price');
 
         /**
          * Filters whether the price should be hidden for the current visitor.
          *
          * @param bool        $hide    Whether the FREE settings hide the price.
-         * @param \WC_Product $product Product being rendered.
+         * @param \WC_Product $product Product being rendered (the parent for a variation).
          */
         return (bool) apply_filters('catalog/hide_price', $hide, $product);
     }
 
     private function shouldHideAddToCart(\WC_Product $product): bool
     {
-        $hide = $this->settings->bool('hide_add_to_cart');
+        $product = self::ruleProduct($product);
+        $hide    = $this->settings->bool('hide_add_to_cart');
 
         /**
          * Filters whether add-to-cart should be hidden for the current visitor.
          *
          * @param bool        $hide    Whether the FREE settings hide add-to-cart.
-         * @param \WC_Product $product Product being rendered.
+         * @param \WC_Product $product Product being rendered (the parent for a variation).
          */
         return (bool) apply_filters('catalog/hide_add_to_cart', $hide, $product);
     }
@@ -443,11 +474,21 @@ final class CatalogMode implements HasHooks
 
     public function enqueueAssets(): void
     {
-        wp_enqueue_style(
+        wp_register_style(
             'catalog',
             CATALOG_URL . 'assets/css/catalog.css',
             [],
             \Catalog\VERSION,
         );
+
+        // The stylesheet only dresses the price notice. Head load on shop
+        // screens when a notice is set; a notice rendered anywhere else (a
+        // product block, or a per-product notice from the catalog/price_notice
+        // filter) enqueues it from filterPriceHtml().
+        if ('' !== $this->settings->string('price_notice')
+            && function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout())
+            && $this->applies()) {
+            wp_enqueue_style('catalog');
+        }
     }
 }

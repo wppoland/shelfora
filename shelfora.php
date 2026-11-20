@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:       Shelfora - Catalog Mode for WooCommerce
- * Plugin URI:        https://plogins.com/plogins-catalog/
+ * Plugin URI:        https://plogins.com/shelfora/
  * Description:        Turn your store into a catalog: hide prices and/or add-to-cart, store-wide or only for selected visitor roles.
- * Version:           1.1.5
+ * Version:           1.1.9
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -14,7 +14,7 @@
  * Text Domain:       shelfora
  * Domain Path:       /languages
  * WC requires at least: 8.0
- * WC tested up to: 11.0
+ * WC tested up to: 11.2
  *
  * @package Catalog
  */
@@ -25,7 +25,7 @@ namespace Catalog;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.1.5';
+const VERSION     = '1.1.9';
 const PLUGIN_FILE = __FILE__;
 
 define('CATALOG_DIR', plugin_dir_path(__FILE__));

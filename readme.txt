@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.5
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,14 +27,15 @@ members-only pricing, and showroom sites that display products without taking
 orders online.
 
 The plugin is open source. Source code and bug reports live on GitHub at
-[github.com/wppoland/plogins-catalog](https://github.com/wppoland/plogins-catalog).
+[github.com/wppoland/shelfora](https://github.com/wppoland/shelfora).
 
 = Documentation and links =
 
-* **Documentation**: [plogins.com/plogins-catalog/docs/](https://plogins.com/plogins-catalog/docs/)
-* **Plugin page**: [plogins.com/plogins-catalog/](https://plogins.com/plogins-catalog/)
-* **Source code**: [github.com/wppoland/plogins-catalog](https://github.com/wppoland/plogins-catalog)
-* **Bug reports and feature requests**: [github.com/wppoland/plogins-catalog/issues](https://github.com/wppoland/plogins-catalog/issues)
+* **Documentation**: [plogins.com/shelfora/docs/](https://plogins.com/shelfora/docs/)
+* **Plugin page**: [plogins.com/shelfora/](https://plogins.com/shelfora/)
+* **Source code**: [github.com/wppoland/shelfora](https://github.com/wppoland/shelfora)
+* **Bug reports and feature requests**: [github.com/wppoland/shelfora/issues](https://github.com/wppoland/shelfora/issues)
+* **Shelfora Pro**: [plogins.com/shelfora-pro/](https://plogins.com/shelfora-pro/)
 
 
 = Features =
@@ -47,6 +48,35 @@ The plugin is open source. Source code and bug reports live on GitHub at
 * Settings screen built with standard WordPress admin styles.
 * Ships with a POT file for translation and removes its option on uninstall.
 * Declares HPOS and cart/checkout blocks compatibility.
+
+= Works with other Plogins plugins =
+
+* [Quotlet - Request a Quote for WooCommerce](https://plogins.com/quotlet/) - in catalog mode, quote products show one Add to quote button where add to cart was (Quotlet 1.3.8 or later).
+
+== Shelfora Pro ==
+
+Shelfora Pro is a separate paid plugin that extends Shelfora.
+
+Included in Shelfora:
+
+* Hide price or add-to-cart
+* Role rules
+* Price notice
+* Add-to-cart replacement filter
+* Purchase enforcement
+
+Shelfora Pro adds:
+
+* Per-role visibility
+* Request a quote
+* Scheduled catalog windows
+* Per-rule CTA
+
+The free edition is not a trial and its features stay available without a time limit.
+
+* **Shelfora Pro** - [plogins.com/shelfora-pro/](https://plogins.com/shelfora-pro/)
+* **Compare editions and pricing** - [plogins.com/shelfora-pro/pricing/](https://plogins.com/shelfora-pro/pricing/)
+* **PRO documentation** - [plogins.com/shelfora-pro/docs/](https://plogins.com/shelfora-pro/docs/)
 
 == Installation ==
 
@@ -80,15 +110,19 @@ No. Products remain visible in listings unless your theme hides them; Shelfora c
 Yes. Use the visitor rule to hide prices from guests while allowing selected roles to see prices and buy.
 
 
+= Does it work with Quotlet? =
+
+Yes, with no setting. When catalog mode hides add to cart, Quotlet quote products show one Add to quote button in its place, on product pages and in shop loops. Products that are not quote products keep Shelfora's own replacement.
+
 = Does this plugin work on WordPress Multisite? =
 
 Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
 
 == Screenshots ==
 
-1. The Catalog settings screen under WooCommerce.
-2. A product page with the price and add-to-cart hidden.
-3. Shop listing in catalog mode.
+1. Settings under WooCommerce > Catalog: what to hide, the price notice and who it applies to.
+2. Shop listing in catalog mode: prices and add-to-cart replaced by a "Contact us for pricing" notice.
+3. The same catalog on a phone.
 
 == External Services ==
 
@@ -99,6 +133,20 @@ Shelfora does not connect to any external services. Price and add-to-cart visibi
 Shelfora is fully translatable and ships the `shelfora.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.9 =
+* Readme: link to Shelfora Pro in the documentation list. New screenshots.
+
+= 1.1.8 =
+* Performance: the stylesheet now loads only where a price notice shows. Plain pages and posts load nothing from the plugin.
+
+= 1.1.7 =
+* Fixed: a variation is judged as its parent product, so a rule that hides add to cart or the price for a product (from an add-on or custom code) also covers each of its variations, and variations are blocked from the cart through WooCommerce's own variation check as well.
+* Fixed: on block themes, a replacement for the add-to-cart button (from an add-on such as a quote button) showed twice on the product page. It now shows once, in place of the add-to-cart block.
+* Fixed: colour swatches inside a replacement form (such as the Quotlet Add to quote form on a variable product) lost their colour and their radio role, because the filter that cleans the replacement HTML dropped those attributes.
+
+= 1.1.6 =
+* Links point at the new plogins.com address and the renamed GitHub repository.
 
 = 1.1.5 =
 * Renamed to Shelfora, a coined English name, following the WordPress.org naming guidelines. Settings, database keys and hooks are untouched.
