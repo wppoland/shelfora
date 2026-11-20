@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,7 @@ The plugin is open source. Source code and bug reports live on GitHub at
 * **Plugin page**: [plogins.com/shelfora/](https://plogins.com/shelfora/)
 * **Source code**: [github.com/wppoland/shelfora](https://github.com/wppoland/shelfora)
 * **Bug reports and feature requests**: [github.com/wppoland/shelfora/issues](https://github.com/wppoland/shelfora/issues)
+* **Shelfora Pro**: [plogins.com/shelfora-pro/](https://plogins.com/shelfora-pro/)
 
 
 = Features =
@@ -132,6 +133,9 @@ Shelfora does not connect to any external services. Price and add-to-cart visibi
 Shelfora is fully translatable and ships the `shelfora.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.9 =
+* Readme: link to Shelfora Pro in the documentation list. New screenshots.
 
 = 1.1.8 =
 * Performance: the stylesheet now loads only where a price notice shows. Plain pages and posts load nothing from the plugin.
