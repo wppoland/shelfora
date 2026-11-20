@@ -119,9 +119,9 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 
 == Screenshots ==
 
-1. The Catalog settings screen under WooCommerce.
-2. A product page with the price and add-to-cart hidden.
-3. Shop listing in catalog mode.
+1. Settings under WooCommerce > Catalog: what to hide, the price notice and who it applies to.
+2. Shop listing in catalog mode: prices and add-to-cart replaced by a "Contact us for pricing" notice.
+3. The same catalog on a phone.
 
 == External Services ==
 

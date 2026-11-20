@@ -115,7 +115,8 @@ msgstr "Convierte tu tienda en un catálogo"
 #: src/Admin/Settings.php:128
 msgid ""
 "Hide prices and/or the add-to-cart button across your store, or only for "
-"certain visitors (for example, show prices to logged-in wholesale customers)."
+"certain visitors (for example, show prices to logged-in wholesale "
+"customers)."
 msgstr ""
 "Oculta los precios y/o el botón Añadir al carrito en tu tienda, o solo para "
 "ciertos visitantes (por ejemplo, muestra los precios a los clientes "
@@ -135,8 +136,8 @@ msgstr "Aplicar el modo catálogo en el escaparate."
 
 #: src/Admin/Settings.php:148
 msgid ""
-"The master switch. When off, nothing is hidden and the catalog stylesheet is "
-"not loaded, your store sells as normal."
+"The master switch. When off, nothing is hidden and the catalog stylesheet is"
+" not loaded, your store sells as normal."
 msgstr ""
 "El interruptor maestro. Cuando está desactivado, no hay nada oculto y la "
 "hoja de estilo del catálogo no está cargada, tu tienda vende normalmente."
@@ -176,19 +177,23 @@ msgstr ""
 
 #: src/Admin/Settings.php:154
 msgid "Admin preview bypass"
-msgstr ""
+msgstr "Vista previa para administradores"
 
 #: src/Admin/Settings.php:154
 msgid ""
-"Allow store administrators and managers to always see prices and add-to-cart "
-"buttons."
+"Allow store administrators and managers to always see prices and add-to-cart"
+" buttons."
 msgstr ""
+"Permite que los administradores y gestores de la tienda vean siempre los "
+"precios y los botones de añadir al carrito."
 
 #: src/Admin/Settings.php:154
 msgid ""
-"When enabled, users with manage_woocommerce capability can test and view the "
-"normal purchasing workflow without signing out."
+"When enabled, users with manage_woocommerce capability can test and view the"
+" normal purchasing workflow without signing out."
 msgstr ""
+"Si se activa, los usuarios con la capacidad manage_woocommerce pueden probar"
+" y ver el proceso de compra normal sin cerrar sesión."
 
 #: src/Admin/Settings.php:158
 msgid "Price notice"
@@ -204,8 +209,8 @@ msgid ""
 "storefront. Leave blank to show nothing. Only applies when \"Hide the "
 "price\" is on."
 msgstr ""
-"Se muestra en lugar del precio oculto, con el estilo de un pequeño cartel de "
-"latón en el escaparate. Déjalo en blanco para no mostrar nada. Sólo aplica "
+"Se muestra en lugar del precio oculto, con el estilo de un pequeño cartel de"
+" latón en el escaparate. Déjalo en blanco para no mostrar nada. Sólo aplica "
 "cuando \"Ocultar el precio\" está activado."
 
 #: src/Admin/Settings.php:170
@@ -234,14 +239,14 @@ msgstr "Todos excepto roles seleccionados"
 
 #: src/Admin/Settings.php:196
 msgid ""
-"Choose who catalog mode hides prices and buying from. Everyone applies it to "
-"all visitors. Only logged-out visitors lets members see prices once they "
+"Choose who catalog mode hides prices and buying from. Everyone applies it to"
+" all visitors. Only logged-out visitors lets members see prices once they "
 "sign in. The two \"selected roles\" rules use the role list below."
 msgstr ""
-"Elige a quién el modo de catálogo oculta los precios y las compras. Todos lo "
-"aplican a todos los visitantes. Sólo los visitantes desconectados permiten a "
-"los miembros ver los precios una vez que inician sesión. Las dos reglas de "
-"\"roles seleccionados\" utilizan la lista de roles a continuación."
+"Elige a quién el modo de catálogo oculta los precios y las compras. Todos lo"
+" aplican a todos los visitantes. Sólo los visitantes desconectados permiten "
+"a los miembros ver los precios una vez que inician sesión. Las dos reglas de"
+" \"roles seleccionados\" utilizan la lista de roles a continuación."
 
 #: src/Admin/Settings.php:198
 msgid ""
@@ -273,8 +278,8 @@ msgstr ""
 
 #: src/Admin/Settings.php:217
 msgid ""
-"Not used by the current visitor rule, choose a \"selected roles\" rule above "
-"to enable it."
+"Not used by the current visitor rule, choose a \"selected roles\" rule above"
+" to enable it."
 msgstr ""
 "No utilizado por la regla de visitante actual, elige una regla de \"roles "
 "seleccionados\" arriba para habilitarla."
@@ -314,8 +319,8 @@ msgstr "por defecto"
 #~ "Plogins Catalog - Catalog Mode for WooCommerce requires WooCommerce to be "
 #~ "active."
 #~ msgstr ""
-#~ "Plogins Catálogo: el modo Catálogo para WooCommerce requiere que "
-#~ "WooCommerce esté activo."
+#~ "Plogins Catálogo: el modo Catálogo para WooCommerce requiere que WooCommerce"
+#~ " esté activo."
 
 #~ msgid "Catalog Mode"
 #~ msgstr "Modo catálogo"
