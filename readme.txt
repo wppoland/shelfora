@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.2
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.9
+Stable tag: 1.1.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,6 +133,9 @@ Shelfora does not connect to any external services. Price and add-to-cart visibi
 Shelfora is fully translatable and ships the `shelfora.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.10 =
+* The PRO notice on the settings screen describes each PRO feature the way the PRO plugin ships it.
 
 = 1.1.9 =
 * Readme: link to Shelfora Pro in the documentation list. New screenshots.

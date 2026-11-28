@@ -25,8 +25,8 @@ return [
             'pl' => ['title' => 'Widoczność per rola', 'desc' => 'Nadpisz ukrywanie ceny, koszyka i komunikat zastępczy per rola klienta, np. gość vs hurtownik.'],
         ],
         [
-            'en' => ['title' => 'Request a quote', 'desc' => 'A built-in quote form in place of add-to-cart, collecting products and quantities and emailing the request to your team.'],
-            'pl' => ['title' => 'Zapytanie o wycenę', 'desc' => 'Wbudowany formularz wyceny zamiast koszyka, zbierający produkty i ilości i wysyłający zapytanie do zespołu.'],
+            'en' => ['title' => 'Request a quote', 'desc' => 'A built-in quote form in place of add-to-cart: each request covers the product the form sits on and a quantity, emailed to your team.'],
+            'pl' => ['title' => 'Zapytanie o wycenę', 'desc' => 'Wbudowany formularz wyceny zamiast koszyka. Jedno zapytanie obejmuje produkt, na którego stronie stoi formularz, oraz podaną ilość i trafia e-mailem do zespołu.'],
         ],
         [
             'en' => ['title' => 'Scheduled catalog windows', 'desc' => 'Turn catalog mode on or off automatically on a schedule.'],
